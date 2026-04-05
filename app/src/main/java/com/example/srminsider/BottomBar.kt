@@ -14,11 +14,13 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.currentBackStackEntryAsState
 
 @Composable
 fun BottomBar(navController: NavController) {
 
-    var selectedItem by remember { mutableStateOf("home") }
+    val navBackStackEntry by navController.currentBackStackEntryAsState()
+    val currentRoute = navBackStackEntry?.destination?.route
 
     Box {
 
@@ -29,9 +31,8 @@ fun BottomBar(navController: NavController) {
 
             // ✅ HOME
             NavigationBarItem(
-                selected = selectedItem == "home",
+                selected = currentRoute == "home",
                 onClick = {
-                    selectedItem = "home"
                     navController.navigate("home") {
                         popUpTo("home")
                         launchSingleTop = true
@@ -41,22 +42,21 @@ fun BottomBar(navController: NavController) {
                     Icon(
                         Icons.Default.Home,
                         contentDescription = "Home",
-                        tint = if (selectedItem == "home") Color(0xFF4DA3FF) else Color.Gray
+                        tint = if (currentRoute == "home") Color(0xFF4DA3FF) else Color.Gray
                     )
                 },
                 label = {
                     Text(
                         "Home",
-                        color = if (selectedItem == "home") Color(0xFF4DA3FF) else Color.Gray
+                        color = if (currentRoute == "home") Color(0xFF4DA3FF) else Color.Gray
                     )
                 }
             )
 
             // ✅ EVENTS
             NavigationBarItem(
-                selected = selectedItem == "events",
+                selected = currentRoute == "events",
                 onClick = {
-                    selectedItem = "events"
                     navController.navigate("events") {
                         popUpTo("home")
                         launchSingleTop = true
@@ -66,13 +66,13 @@ fun BottomBar(navController: NavController) {
                     Icon(
                         Icons.Default.DateRange,
                         contentDescription = "Events",
-                        tint = if (selectedItem == "events") Color(0xFF4DA3FF) else Color.Gray
+                        tint = if (currentRoute == "events") Color(0xFF4DA3FF) else Color.Gray
                     )
                 },
                 label = {
                     Text(
                         "Events",
-                        color = if (selectedItem == "events") Color(0xFF4DA3FF) else Color.Gray
+                        color = if (currentRoute == "events") Color(0xFF4DA3FF) else Color.Gray
                     )
                 }
             )
@@ -81,9 +81,8 @@ fun BottomBar(navController: NavController) {
 
             // ✅ NOTIFICATIONS
             NavigationBarItem(
-                selected = selectedItem == "notifications",
+                selected = currentRoute == "notifications",
                 onClick = {
-                    selectedItem = "notifications"
                     navController.navigate("notifications") {
                         popUpTo("home")
                         launchSingleTop = true
@@ -93,22 +92,21 @@ fun BottomBar(navController: NavController) {
                     Icon(
                         Icons.Default.Notifications,
                         contentDescription = "Notifications",
-                        tint = if (selectedItem == "notifications") Color(0xFF4DA3FF) else Color.Gray
+                        tint = if (currentRoute == "notifications") Color(0xFF4DA3FF) else Color.Gray
                     )
                 },
                 label = {
                     Text(
                         "Notifications",
-                        color = if (selectedItem == "notifications") Color(0xFF4DA3FF) else Color.Gray
+                        color = if (currentRoute == "notifications") Color(0xFF4DA3FF) else Color.Gray
                     )
                 }
             )
 
             // ✅ PROFILE
             NavigationBarItem(
-                selected = selectedItem == "profile",
+                selected = currentRoute == "profile",
                 onClick = {
-                    selectedItem = "profile"
                     navController.navigate("profile") {
                         popUpTo("home")
                         launchSingleTop = true
@@ -118,19 +116,19 @@ fun BottomBar(navController: NavController) {
                     Icon(
                         Icons.Default.Person,
                         contentDescription = "Profile",
-                        tint = if (selectedItem == "profile") Color(0xFF4DA3FF) else Color.Gray
+                        tint = if (currentRoute == "profile") Color(0xFF4DA3FF) else Color.Gray
                     )
                 },
                 label = {
                     Text(
                         "Profile",
-                        color = if (selectedItem == "profile") Color(0xFF4DA3FF) else Color.Gray
+                        color = if (currentRoute == "profile") Color(0xFF4DA3FF) else Color.Gray
                     )
                 }
             )
         }
 
-        // 🔥 CENTER BUTTON → MY EVENTS (UPDATED)
+        // 🔥 CENTER BUTTON → MY EVENTS
         Box(
             modifier = Modifier
                 .fillMaxWidth()
@@ -154,7 +152,6 @@ fun BottomBar(navController: NavController) {
             ) {
                 IconButton(
                     onClick = {
-                        selectedItem = "my_events"
                         navController.navigate("my_events") {
                             popUpTo("home")
                             launchSingleTop = true
