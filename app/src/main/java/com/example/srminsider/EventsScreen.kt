@@ -17,7 +17,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.*
 import androidx.navigation.NavHostController
 
-// ✅ DATA CLASS
+//  DATA CLASS
 data class Event(
     val image: Int,
     val tag: String,
@@ -35,7 +35,7 @@ fun EventsScreen(navController: NavHostController) {
 
     var selectedFilter by remember { mutableStateOf("All") }
 
-    // ✅ YOUR DRAWABLE IMAGES
+    // IMAGES
     val allEvents = listOf(
         Event(R.drawable.hackathon, "Tech", "Hackathon 2026", "Apr 15, 2026 • 9:00 AM", "Tech Park"),
         Event(R.drawable.design, "Design", "Design Workshop", "Apr 8, 2026 • 2:00 PM", "Design Lab"),
@@ -45,7 +45,7 @@ fun EventsScreen(navController: NavHostController) {
         Event(R.drawable.blockchain, "Tech", "Blockchain Basics", "Apr 25, 2026 • 11:00 AM", "CS Department")
     )
 
-    // ✅ FILTER LOGIC
+    // HORIZONTAL FILTER
     val filteredEvents = when (selectedFilter) {
         "All" -> allEvents
         "Upcoming" -> allEvents
@@ -66,7 +66,7 @@ fun EventsScreen(navController: NavHostController) {
                 .padding(horizontal = 16.dp, vertical = 24.dp)
         ) {
 
-            // 🔥 TITLE
+            //  TITLE
             Text(
                 text = "Events",
                 color = Color.White,
@@ -76,7 +76,7 @@ fun EventsScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(12.dp))
 
-            // 🔥 FILTER CHIPS
+            //  FILTER CHIPS
             val filters = listOf("All", "Upcoming", "Tech", "Design", "Workshop")
 
             LazyRow(
@@ -93,7 +93,7 @@ fun EventsScreen(navController: NavHostController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            // 🔥 EVENTS LIST
+            //  EVENTS LIST
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
@@ -106,7 +106,7 @@ fun EventsScreen(navController: NavHostController) {
 }
 
 
-// ✅ FILTER CHIP UI
+//  FILTER CHUP
 @Composable
 fun FilterChipUI(
     text: String,
@@ -132,7 +132,7 @@ fun FilterChipUI(
 }
 
 
-// ✅ EVENT CARD
+//  EVENT
 @Composable
 fun EventCard(event: Event) {
 

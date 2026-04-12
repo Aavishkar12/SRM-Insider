@@ -18,6 +18,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
+// notification screen
+
 @Composable
 fun NotificationScreen(navController: NavHostController) {
 

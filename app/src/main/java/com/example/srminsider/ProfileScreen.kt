@@ -17,8 +17,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.navigation.NavController   // ✅ KEEP THIS
-// ❌ REMOVE THIS LINE → import androidx.navigation.NavHostController
+import androidx.navigation.NavController
+
 
 @Composable
 fun ProfileScreen(navController: NavController) {

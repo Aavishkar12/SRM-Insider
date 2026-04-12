@@ -29,7 +29,7 @@ fun BottomBar(navController: NavController) {
             tonalElevation = 8.dp
         ) {
 
-            // ✅ HOME
+            //  HOME
             NavigationBarItem(
                 selected = currentRoute == "home",
                 onClick = {
@@ -53,7 +53,7 @@ fun BottomBar(navController: NavController) {
                 }
             )
 
-            // ✅ EVENTS
+            // EVENTS
             NavigationBarItem(
                 selected = currentRoute == "events",
                 onClick = {
@@ -79,7 +79,7 @@ fun BottomBar(navController: NavController) {
 
             Spacer(modifier = Modifier.weight(1f))
 
-            // ✅ NOTIFICATIONS
+            //  NOTIFICATIONS
             NavigationBarItem(
                 selected = currentRoute == "notifications",
                 onClick = {
@@ -103,7 +103,7 @@ fun BottomBar(navController: NavController) {
                 }
             )
 
-            // ✅ PROFILE
+            //  PROFILE
             NavigationBarItem(
                 selected = currentRoute == "profile",
                 onClick = {
@@ -128,7 +128,7 @@ fun BottomBar(navController: NavController) {
             )
         }
 
-        // 🔥 CENTER BUTTON → MY EVENTS
+        //  CENTER BUTTON → MY EVENTS
         Box(
             modifier = Modifier
                 .fillMaxWidth()

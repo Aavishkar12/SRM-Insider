@@ -35,7 +35,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(60.dp))
 
-        // 🔥 LOGO TEXT (replace with Image later)
+        // LOGO
         Image(
             painter = painterResource(id = R.drawable.logo), // 🔥 your logo name
             contentDescription = "App Logo",
@@ -46,7 +46,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // 🔥 TAGLINE PILL
+        // TAGLINE
         Box(
             modifier = Modifier
                 .align(Alignment.CenterHorizontally)
@@ -78,7 +78,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // 🔥 EMAIL FIELD
+        // email
         CustomTextField(
             value = email,
             placeholder = "your.email@srmist.edu.in"
@@ -86,7 +86,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // 🔥 PASSWORD FIELD
+        // password
         CustomTextField(
             value = password,
             placeholder = "Enter your password"
@@ -113,7 +113,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(20.dp))
 
-        // 🔥 GRADIENT BUTTON
+        // sign in to continue
         Button(
             onClick = {
                 navController.navigate("home")
@@ -147,7 +147,7 @@ fun LoginScreen(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(30.dp))
 
-        // 🔥 FOOTER
+        // FOOTER
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {

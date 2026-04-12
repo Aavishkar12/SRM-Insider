@@ -18,10 +18,9 @@ fun AppNavigation() {
         }
 
         composable("home") {
-            HomeScreen(navController) // ✅ added
+            HomeScreen(navController)
         }
 
-        // ✅ ADD THIS BLOCK ONLY
         composable("profile") {
             ProfileScreenWrapper(navController)
         }

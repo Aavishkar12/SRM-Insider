@@ -12,7 +12,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -59,7 +58,7 @@ fun MyProjectsScreen(navController: NavController) {
     }
 }
 
-// 📦 DATA CLASS
+//  DATA CLASS
 data class Project(
     val title: String,
     val date: String,
@@ -68,7 +67,7 @@ data class Project(
     val image: Int
 )
 
-// 🎴 CARD (CLICK ADDED HERE)
+// NAVIGATION ON
 @Composable
 fun ProjectCard(project: Project, navController: NavController) {
 
@@ -76,7 +75,7 @@ fun ProjectCard(project: Project, navController: NavController) {
         modifier = Modifier
             .fillMaxWidth()
             .clickable {
-                // 🔥 ONLY NAVIGATE WHEN HACKATHON IS CLICKED
+                //  ONLY NAVIGATE WHEN HACKATHON IS CLICKED
                 if (project.title == "Hackathon 2026") {
                     navController.navigate("hackathon_detail")
                 }

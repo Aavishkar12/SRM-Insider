@@ -34,7 +34,7 @@ data class Participant(
     val isOnline: Boolean
 )
 
-// ---------------- SCREEN ----------------
+
 @Composable
 fun HackathonDetailScreen(onBackClick: () -> Unit) {
 
@@ -64,7 +64,6 @@ fun HackathonDetailScreen(onBackClick: () -> Unit) {
 
         Spacer(modifier = Modifier.height(28.dp))
 
-        // -------- TOP BAR --------
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -91,7 +90,7 @@ fun HackathonDetailScreen(onBackClick: () -> Unit) {
 
         Spacer(modifier = Modifier.height(10.dp))
 
-        // -------- TABS --------
+        // TABS
         Row(modifier = Modifier.padding(horizontal = 16.dp)) {
 
             Text(
@@ -114,7 +113,7 @@ fun HackathonDetailScreen(onBackClick: () -> Unit) {
         Spacer(modifier = Modifier.height(6.dp))
         Divider(color = Color.DarkGray)
 
-        // -------- CONTENT SWITCH --------
+        // CONTENT SWITCH = ( disucssion / participants)
         if (selectedTab == "discussion") {
 
             LazyColumn(
@@ -127,7 +126,7 @@ fun HackathonDetailScreen(onBackClick: () -> Unit) {
                 }
             }
 
-            // INPUT BAR
+            // INPUT BAR - BELOW
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -159,7 +158,7 @@ fun HackathonDetailScreen(onBackClick: () -> Unit) {
     }
 }
 
-// ---------------- DISCUSSION CARD ----------------
+// DISCUSSION
 @Composable
 fun DiscussionCard(item: DiscussionItem) {
     Column(
@@ -187,7 +186,7 @@ fun DiscussionCard(item: DiscussionItem) {
     }
 }
 
-// ---------------- PARTICIPANT ITEM ----------------
+// PARTICIPANT
 @Composable
 fun ParticipantItem(user: Participant) {
 

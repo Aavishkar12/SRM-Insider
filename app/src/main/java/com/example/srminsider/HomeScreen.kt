@@ -42,7 +42,7 @@ fun HomeScreen(navController: NavController)
 
             item {
 
-                // 🔥 HEADER
+                //  WELCOME BACK
                 Text(
                     text = "Welcome back, Aavishkar",
                     color = Color.White,
@@ -52,7 +52,7 @@ fun HomeScreen(navController: NavController)
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                // Announcement Card
+                // ANNOUNCEMENT
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
