@@ -44,9 +44,8 @@ Backend integration (Firebase / REST APIs)
 Chat / Query system
 Resource sharing module
 AI-based event recommendations
-👨‍💻 Author
 
-Aavishkar Singh
+👨‍💻 Author - Aavishkar Singh
 
 ⭐ Summary
 
